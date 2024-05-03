@@ -1,0 +1,1 @@
+EDITOR="vi" bin/rails credentials:edit (master key ထုတ်ချင်ရင် သုံး)
