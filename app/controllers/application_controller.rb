@@ -57,7 +57,8 @@ class ApplicationController < ActionController::API
     @t_direct_threads = TDirectThread.select("name, directthreadmsg, t_direct_threads.id as id, t_direct_threads.created_at  as created_at")
                 .joins("INNER JOIN t_direct_messages ON t_direct_messages.id = t_direct_threads.t_direct_message_id
                         INNER JOIN m_users ON m_users.id = t_direct_threads.m_user_id")
-                .where("t_direct_threads.t_direct_message_id = ?", params[:t_direct_message_id]).order(id: :asc)
+           
+                        .where("t_direct_threads.t_direct_message_id = ?", params[:t_direct_message_id]).order(id: :asc)
     
     @temp_direct_star_thread_msgids = TDirectStarThread.select("directthreadid").where("userid = ?", params[:user_id])
 
